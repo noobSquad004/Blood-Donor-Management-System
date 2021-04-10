@@ -246,7 +246,7 @@ class Donor:
     def search_data(self):
         con = pymysql.connect(host="localhost", user="root", password="", database="blood")
         cursor = con.cursor()
-        cursor.execute("select *from donor_information where blood_group LIKE '%" + str(self.search_txt.get()) + "%'")
+        cursor.execute("select *from donor_information where blood_group LIKE '" + str(self.search_txt.get()) + "%'")
         rows = cursor.fetchall()
         if len(rows) != 0:
             self.information.delete(*self.information.get_children())
@@ -480,7 +480,7 @@ class Blood_Requester:
     def search_data(self):
         con = pymysql.connect(host="localhost", user="root", password="", database="blood")
         cursor = con.cursor()
-        cursor.execute("select *from blood_requester where blood_group LIKE '%" + str(self.search_txt.get()) + "%'")
+        cursor.execute("select *from blood_requester where blood_group LIKE '" + str(self.search_txt.get()) + "%'")
         rows = cursor.fetchall()
         if len(rows) != 0:
             self.information.delete(*self.information.get_children())
@@ -756,7 +756,7 @@ class Search:
     def search_data(self):
         con = pymysql.connect(host="localhost", user="root", password="", database="blood")
         cursor = con.cursor()
-        cursor.execute("select *from donor_information where blood_group LIKE '%" + str(self.search_txt.get()) + "%'")
+        cursor.execute("select *from donor_information where blood_group LIKE '" + str(self.search_txt.get()) + "%'")
         rows = cursor.fetchall()
         if len(rows) != 0:
             self.information.delete(*self.information.get_children())
